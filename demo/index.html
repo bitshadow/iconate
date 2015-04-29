@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="initial-scale=1, minimal-ui" />
+    <meta name="twitter:url" content="http://bitshadow.github.io/iconate.js/">
+    <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+    <!-- <link rel='dns-prefetch' href='//code.jquery.com' /> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,400italic,700italic,700' rel='stylesheet' type='text/css'>
+    <title>iconate.js</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel='stylesheet' href='style.css'>
+    <link rel='stylesheet' href='../dist/iconate.min.css'>
+    <link rel='stylesheet' href='../font-awesome/css/font-awesome.css'>
+</head>
+
+<body>
+    <header class='site__header'>
+        <h1 class='site__title'>
+          <i class='title--icon fa fa-exclamation'></i>conate.js
+        </h1>
+        <span class="sub-header">Transform your icons with trendy animations.</span>
+    </header>
+    <div class='site__content'>
+        <form class='form'>
+            <select id='from' class='dropdown dropdown--from'>
+                <optgroup>
+                    <option value='fa-bars'>fa-bars</option>
+                    <option value='fa-camera'>fa-camera</option>
+                    <option value='fa-pencil'>fa-pencil</option>
+                    <option value='fa-map-marker'>fa-map-marker</option>
+                    <option value='fa-share'>fa-share</option>
+                    <option value='fa-reply'>fa-reply</option>
+                    <option value='fa-comment'>fa-comment</option>
+                    <option value='fa-check'>fa-check</option>
+                    <option value='fa-remove'>fa-remove</option>
+                    <option value='fa-book'>fa-book</option>
+                    <option value='fa-bank'>fa-bank</option>
+                    <option value='fa-anchor'>fa-anchor</option>
+                    <option value='fa-archive'>fa-archive</option>
+                    <option value='fa-area-chart'>fa-area-chart</option>
+                    <option value='fa-arrows'>fa-arrows</option>
+                    <option value='fa-arrows-h'>fa-arrows-h</option>
+                    <option value='fa-arrows-v'>fa-arrows-v</option>
+                    <option value='fa-asterisk'>fa-asterisk</option>
+                    <option value='fa-at'>fa-at</option>
+                    <option value='fa-automobile'>fa-automobile</option>
+                    <option value='fa-ban'>fa-ban</option>
+                    <option value='fa-bank'>fa-bank</option>
+                    <option value='fa-bar-chart'>fa-bar-chart</option>
+                    <option value='fa-bar-chart-o'>fa-bar-chart-o</option>
+                    <option value='fa-barcode'>fa-barcode</option>
+                    <option value='fa-bars'>fa-bars</option>
+                    <option value='fa-bed'>fa-bed</option>
+                    <option value='fa-beer'>fa-beer</option>
+                    <option value='fa-bell'>fa-bell</option>
+                </optgroup>
+            </select>
+            <select id='to' class='dropdown dropdown--to'>
+                <optgroup>
+                    <option value='fa-arrow-left'>fa-arrow-left</option>
+                    <option value='fa-arrow-right'>fa-arrow-right</option>
+                    <option value='fa-arrow-up'>fa-arrow-up</option>
+                    <option value='fa-arrow-down'>fa-arrow-down</option>
+                    <option value='fa-asterisk'>fa-asterisk</option>
+                    <option value='fa-book'>fa-book</option>
+                    <option value='fa-pencil'>fa-pencil</option>
+                    <option value='fa-camera'>fa-camera</option>
+                    <option value='fa-archive'>fa-archive</option>
+                    <option value='fa-area-chart'>fa-area-chart</option>
+                    <option value='fa-arrows'>fa-arrows</option>
+                    <option value='fa-arrows-h'>fa-arrows-h</option>
+                    <option value='fa-arrows-v'>fa-arrows-v</option>
+                    <option value='fa-at'>fa-at</option>
+                    <option value='fa-automobile'>fa-automobile</option>
+                    <option value='fa-ban'>fa-ban</option>
+                    <option value='fa-bank'>fa-bank</option>
+                    <option value='fa-barcode'>fa-barcode</option>
+                    <option value='fa-bars'>fa-bars</option>
+                    <option value='fa-bed'>fa-bed</option>
+                    <option value='fa-beer'>fa-beer</option>
+                    <option value='fa-bell'>fa-bell</option>
+                </optgroup>
+            </select>
+            <select id='animate' class='dropdown dropdown--animate'>
+                <optgroup>
+                    <option value='rollOutRight'>rollOutRight</option>
+                    <option value='rollOutLeft'>rollOutLeft</option>
+                    <option value='rubberBand'>rubberBand</option>
+                    <option value='zoomOut'>zoomOut</option>
+                    <option value='zoomIn'>zoomIn</option>
+                    <option value='fadeOut'>fadeOut</option>
+                    <option value='fadeOutRight'>fadeOutRight</option>
+                    <option value='fadeOutLeft'>fadeOutLeft</option>
+                    <option value='fadeOutTop'>fadeOutTop</option>
+                    <option value='fadeOutBottom'>fadeOutBottom</option>
+                    <option value='horizontalFlip'>horizontalFlip</option>
+                    <option value='verticalFlip'>verticalFlip</option>
+                    <option value='bounceOutBottom'>bounceOutBottom</option>
+                    <option value='bounceOutTop'>bounceOutTop</option>
+                    <option value='bounceOutLeft'>bounceOutLeft</option>
+                    <option value='bounceOutRight'>bounceOutRight</option>
+                    <option value='rotateClockwise'>rotateClockwise</option>
+                    <option value='rotateAntiClockwise'>rotateAntiClockwise</option>
+                    <option value='tada'>tada</option>
+                </optgroup>
+            </select>
+        </form>
+        <i id='icon' class='fa fa-lg'></i>
+        <div id='icon-info'>
+            <small>click icon for awesomeness.</small>
+        </div>
+        <button class='trigger-anim'>Animate</button>
+        <hr />
+        <a class='github-ribbon' href='https://github.com/bitshadow/iconate.js'>
+            <img style='position: fixed; top: 0; right: 0; border: 0;' src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' alt='Fork me on GitHub'>
+        </a>
+        <div class='note'>
+            <small>This demo is illustrated using <a href='http://fortawesome.github.io/Font-Awesome/'>Font-Awesome</a>. Iconate.js also works well with other iconic sets like <a href='http://glyphicons.bootstrapcheatsheets.com/'>
+            Glyphicons</a> and your own icon sets.</small>
+            <hr />
+            <div class='footer-text'>By <a href='https://twitter.com/bitshadow'>Jignesh Kakadiya</a> • <a href='https://github.com/bitshadow/iconate.js'>Source</a> • <a href="https://twitter.com/share?text=iconate.js&hashtags=js,css&url=http://bitshadow.github.io/iconate.js">Tweet</a> • Made with JavaScript and CSS3</div>
+        </div>
+        <footer>
+            <!-- <a href="https://twitter.com/share" class="twitter-share-button" data-via="bitshadow" data-url="http://bitshadow.github.io/iconate.js/">Tweet</a> -->
+        </footer>
+    </div>
+
+    <script type='text/javascript' src='../dist/iconate.js'></script>
+    <script type='text/javascript' src='index.js'></script>
+    <script>
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+      // ga('create', 'UA-62348781-1', 'auto');
+      // ga('send', 'pageview');
+
+    </script>
+</body>
+
+</html>
