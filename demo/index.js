@@ -22,7 +22,6 @@
     animateEl.addEventListener('change', updateEffectType);
 
     function animate(e) {
-        e.preventDefault();
         iconate(iconEl, {
             from: config.fromClass,
             to: config.toClass,
@@ -58,6 +57,9 @@
 
     iconEl.classList.add(config.fromClass);
     iconEl.addEventListener('click', animate);
-    triggerAnimationEl.addEventListener('click', animate);
+    triggerAnimationEl.addEventListener('click', function(e) {
+        e.preventDefault();
+        animate();
+    });
 
 })();
