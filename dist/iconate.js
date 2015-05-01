@@ -11,12 +11,28 @@
 (function() {
     'use strict';
 
-    var DELAY = 600;
     var DEFAULT_DURATION = 600;
     var TEST_INTERVAL = 10;
     var ONE_SECOND = 1000;
     var MAX_FRAMES = 100;
     var frameCounter = 1;
+    var ANIMATION_START, ANIMATION_END;
+
+    /**
+     * chrome 4, ie 10+, firefox 16, safari 4, opera 12.1, 15
+     */
+
+    if (window.onanimationend === undefined && window.onwebkitanimationend !== undefined) {
+        ANIMATION_END = 'webkitAnimationEnd';
+    } else {
+        ANIMATION_END = 'animationend';
+    }
+
+    if (window.onanimationstart === undefined && window.onwebkitanimationstart !== undefined) {
+        ANIMATION_START = 'webkitAnimationStart';
+    } else {
+        ANIMATION_START = 'animationstart';
+    }
 
     var currentTime = Date.now || function() {
         return new Date().getTime();
@@ -31,77 +47,10 @@
         if (elapsedTime >= ONE_SECOND) {
             clearInterval(timer1);
             clearInterval(timer2);
+            console.log('frameCounter', frameCounter / 4);
         }
 
         frameCounter = frameCounter + 1;
-    }
-
-    var throttle = function(func, wait, options) {
-        var context, args, result, timeout = null,
-            previous = 0;
-        if (!options) {
-            options = {};
-        }
-
-        var later = function() {
-            previous = options.leading === false ? 0 : currentTime();
-            timeout = null;
-            result = func.apply(context, args);
-            if (!timeout) {
-                context = args = null;
-            }
-        };
-
-        return function() {
-            var now = currentTime();
-            if (!previous && options.leading === false) {
-                previous = now;
-            }
-
-            var remaining = wait - (now - previous);
-            context = this;
-            args = arguments;
-
-            if (remaining <= 0 || remaining > wait) {
-                if (timeout) {
-                    window.clearTimeout(timeout);
-                    timeout = null;
-                }
-
-                previous = now;
-                result = func.apply(context, args);
-
-                if (!timeout) {
-                    context = args = null;
-                }
-            } else if (!timeout && options.trailing !== false) {
-                timeout = window.setTimeout(later, remaining);
-            }
-
-            return result;
-        };
-    };
-
-    var pfx = ['webkit', 'moz', 'MS', 'o', ''];
-
-    function addPrefixedEventHandler(element, type, callback) {
-        for (var p = 0; p < pfx.length; p++) {
-            if (!pfx[p]) {
-                type = type.toLowerCase();
-            }
-
-            element.addEventListener(pfx[p] + type, callback, false);
-        }
-    }
-
-    function removePrefixedEventHandler(element, type, callback) {
-        for (var p = 0; p < pfx.length; p++) {
-            if (!pfx[p]) {
-                type = type.toLowerCase();
-            }
-
-            element.removeEventListener(pfx[p] + type, callback, false);
-        }
     }
 
     function setAnimation(element, animType, duration) {
@@ -137,7 +86,6 @@
         function animationStartHandler() {
             var currentPercent = 0,
                 averageFrames;
-
             showPercent = window.setInterval(function() {
                 currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
                 averageFrames = Math.max(parseInt(frameCounter / 4, 10), 40);
@@ -152,24 +100,19 @@
         function animationEndHandler() {
             window.clearInterval(showPercent);
             removeAnimation(el);
-            removePrefixedEventHandler(el, 'AnimationEnd', animationEndHandler);
-            removePrefixedEventHandler(el, 'AnimationStart', animationStartHandler);
+
+            el.removeEventListener(ANIMATION_END, animationEndHandler);
+            el.removeEventListener(ANIMATION_START, animationStartHandler);
 
             if (callback && typeof callback === 'function') {
                 callback();
             }
         }
 
-        addPrefixedEventHandler(el, 'AnimationStart', animationStartHandler, false);
-        addPrefixedEventHandler(el, 'AnimationEnd', animationEndHandler, false);
+        el.addEventListener(ANIMATION_START, animationStartHandler, false);
+        el.addEventListener(ANIMATION_END, animationEndHandler, false);
 
-        var debouncedClickHandler = throttle(function() {
-            var durationInSec = duration / ONE_SECOND;
-
-            setAnimation(el, options.animation, durationInSec);
-        }, duration);
-
-        debouncedClickHandler();
+        setAnimation(el, options.animation, duration / ONE_SECOND);
     }
 
     // commonjs

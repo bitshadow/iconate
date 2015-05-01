@@ -37,6 +37,10 @@ body {
     min-width: 320px;
     margin: 0 auto;
     color: #222;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 html {
@@ -100,7 +104,6 @@ h1 {
     -moz-transform: rotateZ(0deg);
     -o-transform: rotateZ(0deg);
     -ms-transform: rotateZ(0deg);
-    transition: transform 0.5s;
 }
 
 .site__title:hover > .title--icon {
@@ -109,7 +112,14 @@ h1 {
     -moz-transform: rotateZ(-180deg);
     -o-transform: rotateZ(-180deg);
     -ms-transform: rotateZ(-180deg);
-    transition: transform 0.5s;
+}
+
+.site__title > .title--icon, .site__title:hover > .title--icon {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
 }
 
 hr {

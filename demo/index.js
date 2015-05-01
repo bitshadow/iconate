@@ -13,7 +13,8 @@
             fromClass: fromEl.value,
             toClass: toEl.value,
             effectType: animateEl.value
-        };
+        },
+        isAnimating = false;
 
     fromEl.addEventListener('change', updateIcon);
     toEl.addEventListener('change', updateIcon);
@@ -22,12 +23,17 @@
     animateEl.addEventListener('change', updateEffectType);
 
     function animate(e) {
+        if (isAnimating) return;
+
         iconate(iconEl, {
             from: config.fromClass,
             to: config.toClass,
             animation: config.effectType
+        }, function() {
+            isAnimating = false;
         });
 
+        isAnimating = true;
         var temp = config.fromClass;
         config.fromClass = config.toClass;
         config.toClass = temp;
@@ -57,9 +63,9 @@
 
     iconEl.classList.add(config.fromClass);
     iconEl.addEventListener('click', animate);
+
     triggerAnimationEl.addEventListener('click', function(e) {
         e.preventDefault();
         animate();
     });
-
 })();
