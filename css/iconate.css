@@ -232,17 +232,17 @@
 }
 
 @keyframes rollOutRight {
-    30%, 50%, 55% {
-        opacity: 0;
-    }
     30% {
         transform: translateX(10px) rotate3d(0, 0, 1, 50deg);
+        opacity: 0;
     }
     50% {
         transform: translateX(-20px);
+        opacity: 0;
     }
     55% {
         transform: translateX(-20px) rotate3d(0, 0, 1, -90deg);
+        opacity: 0;
     }
     100% {
         transform: translateX(0) rotate3d(0, 0, 1, 0deg);
@@ -251,17 +251,17 @@
 }
 
 @keyframes rollOutLeft {
-    30%, 50%, 55% {
-        opacity: 0;
-    }
     30% {
         transform: translateX(-10px) rotate3d(0, 0, 1, -50deg);
+        opacity: 0;
     }
     50% {
         transform: translateX(20px);
+        opacity: 0;
     }
     55% {
         transform: translateX(20px) rotate3d(0, 0, 1, 90deg);
+        opacity: 0;
     }
     100% {
         transform: translateX(0) rotate3d(0, 0, 1, 0deg);
@@ -270,14 +270,13 @@
 }
 
 @keyframes rotateClockwise {
-    0%, 50%, 100% {
-        transform-origin: center;
-    }
     0% {
         opacity: 1;
+        transform-origin: center;
     }
     50% {
         opacity: 0;
+        transform-origin: center;
     }
     100% {
         transform: rotate3d(0, 0, 1, 360deg);
@@ -286,17 +285,17 @@
 }
 
 @keyframes rotateAntiClockwise {
-    0%, 50%, 100% {
-        transform-origin: center;
-    }
     0% {
         opacity: 1;
+        transform-origin: center;
     }
     50% {
         opacity: 0;
+        transform-origin: center;
     }
     100% {
         transform: rotate3d(0, 0, 1, -360deg);
+        transform-origin: center;
         opacity: 1;
     }
 }
