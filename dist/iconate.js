@@ -2,10 +2,6 @@
 * http://bitshadow.github.io/iconatejs/
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
-/*! iconate.js - v0.3.0 - 2015-04-27
- * http://bitshadow.github.io/iconatejs/
- * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
-
 /*global window */
 /*global document */
 (function() {
@@ -18,10 +14,18 @@
     var frameCounter = 1;
     var ANIMATION_START, ANIMATION_END;
 
-    /**
-     * chrome 4, ie 10+, firefox 16, safari 4, opera 12.1, 15
-     */
+    var isAnimationSupported = (function() {
+        // http://jsfiddle.net/rich_harris/oquLu2qL/
+        var isIe11 = !window.ActiveXObject && 'ActiveXObject' in window;
+        var documentStyle = document.documentElement.style;
 
+        return !isIe11 &&
+            (documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined);
+    })();
+
+    /**
+     * chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15
+     */
     if (window.onanimationend === undefined && window.onwebkitanimationend !== undefined) {
         ANIMATION_END = 'webkitAnimationEnd';
     } else {
@@ -76,24 +80,31 @@
     }
 
     function iconate(el, options, callback) {
+        if (!isAnimationSupported) {
+            changeClasses(element, options.from, options.to);
+            if (typeof callback == 'function') {
+                callback();
+            }
+
+            return;
+        }
+
         var duration, interval, showPercent;
         options = options || {};
 
-        // var result = document.getElementById('result');
         duration = options.duration || DEFAULT_DURATION;
         interval = duration / MAX_FRAMES;
 
         function animationStartHandler() {
             var currentPercent = 0,
                 averageFrames;
+
             showPercent = window.setInterval(function() {
                 currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
                 averageFrames = Math.max(parseInt(frameCounter / 4, 10), 40);
                 if (currentPercent === averageFrames) {
                     changeClasses(el, options.from, options.to);
                 }
-
-                // result.innerHTML = currentPercent;
             }, interval);
         }
 
@@ -104,7 +115,7 @@
             el.removeEventListener(ANIMATION_END, animationEndHandler);
             el.removeEventListener(ANIMATION_START, animationStartHandler);
 
-            if (callback && typeof callback === 'function') {
+            if (typeof callback === 'function') {
                 callback();
             }
         }
