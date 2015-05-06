@@ -21,38 +21,27 @@ Installation
         </head>
 
         <body>
-            <!-- if you are using font-awesome -->
             <i id="icon" class="fa fa-bars fa-lg"></i>
-
-            <!-- if you are using glyphicons -->
-            <span class="glyphicons glyphicons-menu-hamburger"></span>
-
-            /**
-             * Your Template
-             */
-
+            
             <script type="text/javascript" src="iconate.min.js">
         </body>
     ```
 
-2. You can animate an icon on click event.
+2. You can animate an icon with this.
 
     ```
-        var iconElement = document.getElementById('icon'),
-            options = {
+        var iconElement = document.getElementById('icon');
+        var options = {
                 from: 'fa-bars',
                 to: 'fa-arrow-right',
                 animation: 'rubberBand'
             };
-
-        iconElement.addEventListener('click', function() {
-            iconate(this, options);
-        });
+        
+        iconate(iconElement, options);
     ```
 
 
-
-3. You can pass following AnimationTypes to iconate call.
+3. Following AnimationTypes can be used in iconate call.
     * `rollOutRight`
     * `rollOutLeft`
     * `rubberBand`
@@ -91,6 +80,10 @@ Browser Support
 ---------------
 
 Should work with chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15.
+
+TODO
+----
+custom css build for animations.
 
 License
 -------
