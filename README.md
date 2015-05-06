@@ -7,6 +7,8 @@
 
 Installation
 ------------
+- NPM: `npm install iconate`
+- Bower: `bower install iconate`
 - [Download zip](https://github.com/bitshadow/iconate/archive/master.zip).
 
 **Note**: **iconate.js** also supports AMD and commonJS module pattern.
