@@ -2,8 +2,8 @@
   "name": "iconate",
   "title": "iconate.js",
   "description": "A light-weight library to animate your font-awesome like icons",
-  "version": "0.3.0",
-  "homepage": "http://bitshadow.github.io/iconatejs/",
+  "version": "0.1.0",
+  "homepage": "http://bitshadow.github.io/iconate",
   "author": {
     "name": "Jignesh Kakadiya",
     "email": "jigneshhk1992@gmail.com",
@@ -12,22 +12,23 @@
   "main": "dist/iconate.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/bitshadow/iconate.js.git"
+    "url": "git://github.com/bitshadow/iconate.git"
   },
   "bugs": {
-    "url": "https://github.com/bitshadow/iconate.js/issues"
+    "url": "https://github.com/bitshadow/iconate/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/bitshadow/iconate.js/blob/master/LICENSE"
+      "url": "https://github.com/bitshadow/iconate/blob/master/LICENSE"
     }
   ],
   "keywords": [
+    "icon",
     "animation",
-    "transition",
     "ux",
     "javascript",
+    "transition",
     "library"
   ],
   "devDependencies": {

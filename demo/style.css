@@ -37,10 +37,6 @@ body {
     min-width: 320px;
     margin: 0 auto;
     color: #222;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 html {
@@ -96,6 +92,13 @@ h1 {
     margin-bottom: 10px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+}
+
+.site__content {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .site__title > .title--icon {

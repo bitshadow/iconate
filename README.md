@@ -1,13 +1,13 @@
 #iconate.js
-*A call to transform your icons in cool trendy way (no svg required)*
+*A call to transform your existing icons in cool trendy way*
 
 `iconate.js` is tiny performant library for cross-browser icon transformation animations in your projects.
 
-##[View Demo](http://bitshadow.github.io/iconate.js)
+##[View Demo](http://bitshadow.github.io/iconate)
 
 Installation
 ------------
-- [Download zip](https://github.com/bitshadow/iconate.js/archive/master.zip).
+- [Download zip](https://github.com/bitshadow/iconate/archive/master.zip).
 
 **Note**: **iconate.js** also supports AMD and commonJS module pattern.
 
@@ -37,7 +37,6 @@ Installation
 
 2. You can animate an icon on click event.
 
-    `Using Javascript:`
     ```
         var iconElement = document.getElementById('icon'),
             options = {
@@ -51,19 +50,6 @@ Installation
         });
     ```
 
-    `Using jQuery:`
-    ```
-        var $icon = $('#icon'),
-            options = {
-                from: 'fa-bars',
-                to: 'fa-arrow-right',
-                animation: 'rubberBand'
-            };
-
-        $icon.click(function(e) {
-            iconate(this, options);
-        });
-    ```
 
 
 3. You can pass following AnimationTypes to iconate call.
@@ -104,7 +90,7 @@ Animate an icon element.
 Browser Support
 ---------------
 
-`iconate.js` works best on latest versions of Google Chrome, Firefox and Safari and opera and IE.
+Should work with chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15.
 
 License
 -------

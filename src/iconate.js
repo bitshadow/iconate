@@ -4,11 +4,12 @@
     'use strict';
 
     var DEFAULT_DURATION = 600;
-    var TEST_INTERVAL = 10;
-    var ONE_SECOND = 1000;
-    var MAX_FRAMES = 100;
-    var frameCounter = 1;
-    var ANIMATION_START, ANIMATION_END;
+    var frameCounter     = 1;
+    var TEST_INTERVAL    = 10;
+    var MAX_FRAMES       = 100;
+    var ONE_SECOND       = 1000;
+    var ANIMATION_START;
+    var ANIMATION_END;
 
     var isAnimationSupported = (function() {
         // http://jsfiddle.net/rich_harris/oquLu2qL/
