@@ -81,11 +81,8 @@ Animate an icon element.
 Browser Support
 ---------------
 
-Should work with chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15.
+Tested with chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15.
 
-TODO
-----
-custom css build for animations.
 
 License
 -------
