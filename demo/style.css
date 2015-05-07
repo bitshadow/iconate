@@ -71,6 +71,7 @@ html {
 h1 {
     font-weight: 100;
     margin: 0 auto;
+    line-height: 100px;
 }
 
 .site__title {
@@ -84,7 +85,7 @@ h1 {
 }
 
 .form {
-    margin-bottom: 60px;
+    margin: 30px 0 30px;
 }
 
 #icon {
@@ -127,7 +128,7 @@ h1 {
 
 hr {
     border: none;
-    margin: 40px 0 10px;
+    margin: 10px 0 10px;
     height: 1px;
     background-color: #c0c8c9;
     background-image: -webkit-linear-gradient(0deg, #fff, #c0c8c9, #fff);
@@ -135,6 +136,15 @@ hr {
 
 .trigger-anim {
     display: none;
+}
+
+.site__footer {
+    margin-top: 70px;
+}
+
+.footer-text, .sub-header {
+    font-size: 15px;
+    color: #999;
 }
 
 @media (max-width: 650px) {
