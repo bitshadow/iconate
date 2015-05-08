@@ -1,9 +1,9 @@
-#iconate.js
+#iconate.js [![npm version](https://badge.fury.io/js/iconate.svg)](http://badge.fury.io/js/iconate)
 *A call to transform your existing icons in cool trendy way*
 
 `iconate.js` is tiny performant library for cross-browser icon transformation animations in your projects.
 
-##[View Demo](http://bitshadow.github.io/iconate)
+##[Demo](http://bitshadow.github.io/iconate)
 
 Installation
 ------------
@@ -18,27 +18,24 @@ Installation
 1. Include the Stylesheet and Javascript files on your html.
 
     ```
-        <head>
-            <link rel="stylesheet" href="iconate.min.css">
-        </head>
-
-        <body>
-            <i id="icon" class="fa fa-bars fa-lg"></i>
-            
-            <script type="text/javascript" src="iconate.min.js">
-        </body>
+        <link rel="stylesheet" href="iconate.min.css">
+        <script type="text/javascript" src="iconate.min.js">
     ```
+2. Create icon element.
 
-2. You can animate an icon with this.
+    ```
+       <i id="icon" class="fa fa-bars fa-lg"></i>
+    ```
+3. Animate icon from `fa-bar` to `fa-arrow-right` with `rubberBand` animation.
 
     ```
         var iconElement = document.getElementById('icon');
         var options = {
-                from: 'fa-bars',
-                to: 'fa-arrow-right',
-                animation: 'rubberBand'
-            };
-        
+            from: 'fa-bars',
+            to: 'fa-arrow-right',
+            animation: 'rubberBand'
+        };
+
         iconate(iconElement, options);
     ```
 
@@ -81,7 +78,7 @@ Animate an icon element.
 Browser Support
 ---------------
 
-Tested with chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15.
+Tested with chrome 4+, ie 10+, firefox 16+, safari 6+, opera 15+.
 
 
 License
