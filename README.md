@@ -1,4 +1,4 @@
-#iconate.js [![npm version](https://badge.fury.io/js/iconate.svg)](http://badge.fury.io/js/iconate)
+#iconate.js [![npm version](https://badge.fury.io/js/iconate.svg)](http://badge.fury.io/js/iconate)[![Comment-on-Github.Party](https://img.shields.io/badge/Comment%20on-Github.Party-yellow.svg)](https://github.party/item?id=51)
 *A call to transform your existing icons in cool trendy way*
 
 `iconate.js` is tiny performant library for cross-browser icon transformation animations in your projects.
