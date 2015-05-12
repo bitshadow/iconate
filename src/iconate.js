@@ -4,6 +4,7 @@
     'use strict';
 
     var DEFAULT_DURATION = 600;
+    var DEFAULT_ANIMATION = 'zoomOut';
     var frameCounter     = 1;
     var TEST_INTERVAL    = 10;
     var MAX_FRAMES       = 100;
@@ -77,6 +78,7 @@
     }
 
     function iconate(el, options, callback) {
+        options.animation = options.animation || DEFAULT_ANIMATION;
         if (!isAnimationSupported) {
             changeClasses(element, options.from, options.to);
             if (typeof callback == 'function') {
