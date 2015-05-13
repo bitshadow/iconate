@@ -3,11 +3,12 @@
 (function() {
     'use strict';
 
-    var DEFAULT_DURATION = 600;
-    var frameCounter     = 1;
-    var TEST_INTERVAL    = 10;
-    var MAX_FRAMES       = 100;
-    var ONE_SECOND       = 1000;
+    var DEFAULT_DURATION  = 600;
+    var DEFAULT_ANIMATION = 'zoomOut';
+    var frameCounter      = 1;
+    var TEST_INTERVAL     = 10;
+    var MAX_FRAMES        = 100;
+    var ONE_SECOND        = 1000;
     var ANIMATION_START;
     var ANIMATION_END;
 
@@ -77,6 +78,7 @@
     }
 
     function iconate(el, options, callback) {
+        options.animation = options.animation || DEFAULT_ANIMATION;
         if (!isAnimationSupported) {
             changeClasses(element, options.from, options.to);
             if (typeof callback == 'function') {

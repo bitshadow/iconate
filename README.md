@@ -72,7 +72,7 @@ Animate an icon element.
 * `options` - Object containing options to control the animation.
     * `from` - Current icon class name (ex. 'fa-bars' in case of font-awesome)
     * `to` - Final icon class name (ex. 'fa-arrow-right')
-    * `animation` - You can choose any animation from above listed animation types.  (ex. 'fadeOutRight')
+    * `animation` - You can choose any animation from above listed animation types.  (ex. 'fadeOutRight')(default: 'zoomOut')
 * `callback` - Optional callback to execute after animation completes.
 
 Browser Support
