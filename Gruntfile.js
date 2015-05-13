@@ -3,6 +3,10 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        bump: {
+            options: { part: 'patch' },
+            files: ['package.json']
+        },
         pkg: grunt.file.readJSON('package.json'),
 
         meta: {
@@ -76,6 +80,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-bumpx');
 
     grunt.registerTask('build', [
         'postcss',
