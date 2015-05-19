@@ -78,7 +78,10 @@
     }
 
     function iconate(el, options, callback) {
-        options.animation = options.animation || DEFAULT_ANIMATION;
+        if (!el) {
+            throw new Error('Iconate > "element" is required');
+        }
+
         if (!isAnimationSupported) {
             changeClasses(element, options.from, options.to);
             if (typeof callback == 'function') {
@@ -88,9 +91,9 @@
             return;
         }
 
-        var duration, interval, showPercent;
         options = options || {};
-
+        var duration, interval, showPercent, animation;
+        animation = options.animation || DEFAULT_ANIMATION;
         duration = options.duration || DEFAULT_DURATION;
         interval = duration / MAX_FRAMES;
 
@@ -122,7 +125,7 @@
         el.addEventListener(ANIMATION_START, animationStartHandler, false);
         el.addEventListener(ANIMATION_END, animationEndHandler, false);
 
-        setAnimation(el, options.animation, duration / ONE_SECOND);
+        setAnimation(el, animation, duration / ONE_SECOND);
     }
 
     // commonjs
