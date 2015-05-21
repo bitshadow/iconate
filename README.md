@@ -1,7 +1,7 @@
 #iconate.js [![npm version](https://badge.fury.io/js/iconate.svg)](http://badge.fury.io/js/iconate)
-*A call to transform your existing icons in cool trendy way*
+*A call to transform your existing icons in a cool trendy way*
 
-`iconate.js` is tiny performant library for cross-browser icon transformation animations in your projects.
+`iconate.js` is a tiny performant library for cross-browser icon transformation animations in your projects.
 
 ##[Demo](http://bitshadow.github.io/iconate)
 
@@ -15,7 +15,7 @@ Installation
 
 
 ## Basic Usage
-1. Include the Stylesheet and Javascript files on your html.
+1. Include the Stylesheet and Javascript files in your html.
 
     ```
         <link rel="stylesheet" href="iconate.min.css">
