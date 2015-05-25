@@ -1,7 +1,7 @@
 #iconate.js [![npm version](https://badge.fury.io/js/iconate.svg)](http://badge.fury.io/js/iconate)
-*A call to transform your existing icons in cool trendy way*
+*A call to transform your existing icons in a cool trendy way*
 
-`iconate.js` is tiny performant library for cross-browser icon transformation animations in your projects.
+`iconate.js` is a tiny performant library for cross-browser icon transformation animations in your projects.
 
 ##[Demo](http://bitshadow.github.io/iconate)
 
@@ -15,7 +15,7 @@ Installation
 
 
 ## Basic Usage
-1. Include the Stylesheet and Javascript files on your html.
+1. Include the Stylesheet and Javascript files in your html.
 
     ```
         <link rel="stylesheet" href="iconate.min.css">
@@ -78,7 +78,9 @@ Animate an icon element.
 Browser Support
 ---------------
 
-Tested with chrome 4+, ie 10+, firefox 16+, safari 6+, opera 15+.
+![Chrome](https://camo.githubusercontent.com/3bfe3f8c64cf4e968b3d45f587c291853a1b8035/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f6368726f6d652f6368726f6d655f34387834382e706e67) | ![Firefox](https://camo.githubusercontent.com/0a3d07e334548501ef5b7c20a75fc1a4e9457566/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f66697265666f782f66697265666f785f34387834382e706e67) | ![IE](https://camo.githubusercontent.com/439d1528b7dc0a003ff74eaeb1fe30d24bb6c904/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f696e7465726e65742d6578706c6f7265722f696e7465726e65742d6578706c6f7265725f34387834382e706e67) | ![Opera](https://camo.githubusercontent.com/ef1c2ea75ec9ec27156ec690f03b8b44e9c0e996/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f6f706572612f6f706572615f34387834382e706e67) | ![Safari](https://camo.githubusercontent.com/7e8c82eab10c4686d5d94a5875ba436750ac33d7/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7361666172692f7361666172695f34387834382e706e67)
+--- | --- | --- | --- | --- |
+4+ ✔ | 16+ ✔ | 10+ ✔ | 15+ ✔ | 6+ ✔ |
 
 
 License
