@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "author": "Jignesh Kakadiya",
   "description": "Transform your icons with trendy animations.",
-  "main": ["dist/iconate.min.js", "dist/iconate.min.css"],
+  "main": [
+    "dist/iconate.min.js",
+    "dist/iconate.min.css"
+  ],
   "moduleType": [
     "amd",
     "globals"
