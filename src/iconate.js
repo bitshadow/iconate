@@ -4,9 +4,6 @@
     'use strict';
 
     var DEFAULT_DURATION = 600;
-    var frameCounter     = 1;
-    var TEST_INTERVAL    = 10;
-    var MAX_FRAMES       = 100;
     var ONE_SECOND       = 1000;
     var ANIMATION_START;
     var ANIMATION_END;
@@ -36,20 +33,6 @@
     var currentTime = Date.now || function() {
         return new Date().getTime();
     };
-
-    var time = currentTime();
-    var timer1 = setInterval(func1, TEST_INTERVAL);
-    var timer2 = setInterval(func1, TEST_INTERVAL);
-
-    function func1() {
-        var elapsedTime = currentTime() - time;
-        if (elapsedTime >= ONE_SECOND) {
-            clearInterval(timer1);
-            clearInterval(timer2);
-        }
-
-        frameCounter = frameCounter + 1;
-    }
 
     function setAnimation(element, animType, duration) {
         element.style.setProperty('-webkit-animation', animType + ' ' + duration + 's');
@@ -83,26 +66,22 @@
             return;
         }
 
-        var duration, interval, showPercent;
+        var duration, showPercent;
         options = options || {};
 
         duration = options.duration || DEFAULT_DURATION;
-        interval = duration / MAX_FRAMES;
 
         function animationStartHandler() {
             var currentPercent = 0,
                 averageFrames,
-                baseFrameCounter;
+                now = currentTime(),
+                halfDuration = duration / 2;
 
             showPercent = window.setInterval(function() {
-                currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
-                baseFrameCounter = parseInt(frameCounter / 4, 10);
-                averageFrames = isIE11 ? baseFrameCounter - 15 : Math.max(baseFrameCounter, 40);
-                console.log(currentPercent, baseFrameCounter);
-                if (currentPercent === averageFrames) {
+                if (currentTime() - now >= halfDuration) {
                     changeClasses(el, options.from, options.to);
                 }
-            }, interval);
+            }, halfDuration);
         }
 
         function animationEndHandler() {
