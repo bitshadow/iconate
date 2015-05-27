@@ -97,7 +97,7 @@
             showPercent = window.setInterval(function() {
                 currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
                 baseFrameCounter = parseInt(frameCounter / 4, 10);
-                averageFrames = isIE11 ? baseFrameCounter - 8 : Math.max(baseFrameCounter, 40);
+                averageFrames = isIE11 ? baseFrameCounter - 15 : Math.max(baseFrameCounter, 40);
                 if (currentPercent === averageFrames) {
                     changeClasses(el, options.from, options.to);
                 }
