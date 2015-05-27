@@ -102,6 +102,7 @@
                 currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
                 baseFrameCounter = parseInt(frameCounter / 4, 10);
                 averageFrames = isIE11 ? baseFrameCounter - 15 : Math.max(baseFrameCounter, 40);
+                console.log(currentPercent, baseFrameCounter);
                 if (currentPercent === averageFrames) {
                     changeClasses(el, options.from, options.to);
                 }
