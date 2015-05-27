@@ -77,8 +77,9 @@
                 now = currentTime(),
                 halfDuration = duration / 2;
 
-            showPercent = window.setInterval(function() {
-                if (currentTime() - now >= halfDuration) {
+            showPercent = window.setTimeout(function() {
+                var elapsed = currentTime() - now;
+                if (elapsed >= halfDuration) {
                     changeClasses(el, options.from, options.to);
                 }
             }, halfDuration);
