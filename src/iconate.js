@@ -11,6 +11,7 @@
     var ANIMATION_START;
     var ANIMATION_END;
 
+    var isIE11 = !window.ActiveXObject && 'ActiveXObject' in window;
     var isAnimationSupported = (function() {
         var documentStyle = document.documentElement.style;
 
@@ -45,7 +46,6 @@
         if (elapsedTime >= ONE_SECOND) {
             clearInterval(timer1);
             clearInterval(timer2);
-            console.log('frameCounter', frameCounter / 4);
         }
 
         frameCounter = frameCounter + 1;
@@ -91,11 +91,13 @@
 
         function animationStartHandler() {
             var currentPercent = 0,
-                averageFrames;
+                averageFrames,
+                baseFrameCounter;
 
             showPercent = window.setInterval(function() {
                 currentPercent = currentPercent < MAX_FRAMES ? currentPercent + 1 : 0;
-                averageFrames = Math.max(parseInt(frameCounter / 4, 10), 40);
+                baseFrameCounter = parseInt(frameCounter / 4, 10);
+                averageFrames = isIE11 ? baseFrameCounter - 8 : Math.max(baseFrameCounter, 40);
                 if (currentPercent === averageFrames) {
                     changeClasses(el, options.from, options.to);
                 }

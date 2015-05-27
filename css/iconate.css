@@ -279,7 +279,8 @@
         transform-origin: center;
     }
     100% {
-        transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotateZ(360deg);
+        transform-origin: center;
         opacity: 1;
     }
 }
@@ -294,7 +295,7 @@
         transform-origin: center;
     }
     100% {
-        transform: rotate3d(0, 0, 1, -360deg);
+        transform: rotateZ(-360deg);
         transform-origin: center;
         opacity: 1;
     }
