@@ -83,7 +83,7 @@
         }
 
         if (!isAnimationSupported) {
-            changeClasses(element, options.from, options.to);
+            changeClasses(el, options.from, options.to);
             if (typeof callback == 'function') {
                 callback();
             }

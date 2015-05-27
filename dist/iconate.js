@@ -1,4 +1,4 @@
-/*! iconate.js - v0.2.1 - 2015-05-19
+/*! iconate.js - v0.2.2 - 2015-05-27
 * http://bitshadow.github.io/iconate
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
@@ -87,7 +87,7 @@
         }
 
         if (!isAnimationSupported) {
-            changeClasses(element, options.from, options.to);
+            changeClasses(el, options.from, options.to);
             if (typeof callback == 'function') {
                 callback();
             }
