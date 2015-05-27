@@ -12,12 +12,9 @@
     var ANIMATION_END;
 
     var isAnimationSupported = (function() {
-        // http://jsfiddle.net/rich_harris/oquLu2qL/
-        var isIe11 = !window.ActiveXObject && 'ActiveXObject' in window;
         var documentStyle = document.documentElement.style;
 
-        return !isIe11 &&
-            (documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined);
+        return documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined;
     })();
 
     /**
@@ -78,7 +75,7 @@
 
     function iconate(el, options, callback) {
         if (!isAnimationSupported) {
-            changeClasses(element, options.from, options.to);
+            changeClasses(el, options.from, options.to);
             if (typeof callback == 'function') {
                 callback();
             }

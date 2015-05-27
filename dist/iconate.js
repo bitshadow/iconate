@@ -1,5 +1,5 @@
-/*! iconate.js - v0.3.0 - 2015-05-01
-* http://bitshadow.github.io/iconatejs/
+/*! iconate.js - v0.1.0 - 2015-05-27
+* http://bitshadow.github.io/iconate
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
 /*global window */
@@ -8,19 +8,17 @@
     'use strict';
 
     var DEFAULT_DURATION = 600;
-    var TEST_INTERVAL = 10;
-    var ONE_SECOND = 1000;
-    var MAX_FRAMES = 100;
-    var frameCounter = 1;
-    var ANIMATION_START, ANIMATION_END;
+    var frameCounter     = 1;
+    var TEST_INTERVAL    = 10;
+    var MAX_FRAMES       = 100;
+    var ONE_SECOND       = 1000;
+    var ANIMATION_START;
+    var ANIMATION_END;
 
     var isAnimationSupported = (function() {
-        // http://jsfiddle.net/rich_harris/oquLu2qL/
-        var isIe11 = !window.ActiveXObject && 'ActiveXObject' in window;
         var documentStyle = document.documentElement.style;
 
-        return !isIe11 &&
-            (documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined);
+        return documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined;
     })();
 
     /**
@@ -81,7 +79,7 @@
 
     function iconate(el, options, callback) {
         if (!isAnimationSupported) {
-            changeClasses(element, options.from, options.to);
+            changeClasses(el, options.from, options.to);
             if (typeof callback == 'function') {
                 callback();
             }
