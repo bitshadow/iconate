@@ -3,21 +3,17 @@
 (function() {
     'use strict';
 
-    var DEFAULT_DURATION = 600;
-    var ONE_SECOND       = 1000;
+    var DEFAULT_DURATION  = 600;
+    var ONE_SECOND        = 1000;
+    var DEFAULT_ANIMATION = 'zoomOut';
     var ANIMATION_START;
     var ANIMATION_END;
 
-    var isIE11 = !window.ActiveXObject && 'ActiveXObject' in window;
     var isAnimationSupported = (function() {
         var documentStyle = document.documentElement.style;
-
         return documentStyle.animation !== undefined || documentStyle.webkitAnimation !== undefined;
     })();
 
-    /**
-     * chrome 4+, ie 10+, firefox 16, safari 4, opera 12.1, 15
-     */
     if (window.onanimationend === undefined && window.onwebkitanimationend !== undefined) {
         ANIMATION_END = 'webkitAnimationEnd';
     } else {
@@ -57,6 +53,10 @@
     }
 
     function iconate(el, options, callback) {
+        if (!el) {
+            throw new Error('Iconate > "element" is required');
+        }
+
         if (!isAnimationSupported) {
             changeClasses(el, options.from, options.to);
             if (typeof callback == 'function') {
@@ -66,9 +66,9 @@
             return;
         }
 
-        var duration, showPercent;
         options = options || {};
-
+        var duration, showPercent, animation;
+        animation = options.animation || DEFAULT_ANIMATION;
         duration = options.duration || DEFAULT_DURATION;
 
         function animationStartHandler() {
@@ -99,7 +99,7 @@
         el.addEventListener(ANIMATION_START, animationStartHandler, false);
         el.addEventListener(ANIMATION_END, animationEndHandler, false);
 
-        setAnimation(el, options.animation, duration / ONE_SECOND);
+        setAnimation(el, animation, duration / ONE_SECOND);
     }
 
     // commonjs
