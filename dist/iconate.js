@@ -1,4 +1,4 @@
-/*! iconate.js - v0.2.3 - 2015-05-27
+/*! iconate.js - v0.2.4 - 2015-05-30
 * http://bitshadow.github.io/iconate
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
@@ -114,7 +114,9 @@
 
     // AMD module
     else if (typeof define === 'function' && define.amd) {
-        define([], iconate);
+        define(function() {
+            return iconate;
+        });
     }
 
     // Browser global

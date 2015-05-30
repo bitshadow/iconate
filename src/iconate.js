@@ -110,7 +110,9 @@
 
     // AMD module
     else if (typeof define === 'function' && define.amd) {
-        define([], iconate);
+        define(function() {
+            return iconate;
+        });
     }
 
     // Browser global
