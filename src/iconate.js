@@ -86,7 +86,7 @@
         }
 
         function animationEndHandler() {
-            window.clearInterval(showPercent);
+            window.clearTimeout(showPercent);
             removeAnimation(el);
 
             el.removeEventListener(ANIMATION_END, animationEndHandler);
