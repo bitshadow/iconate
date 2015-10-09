@@ -1,4 +1,4 @@
-/*! iconate.js - v0.2.4 - 2015-05-30
+/*! iconate.js - v0.2.4 - 2015-10-09
 * http://bitshadow.github.io/iconate
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
@@ -90,7 +90,7 @@
         }
 
         function animationEndHandler() {
-            window.clearInterval(showPercent);
+            window.clearTimeout(showPercent);
             removeAnimation(el);
 
             el.removeEventListener(ANIMATION_END, animationEndHandler);
