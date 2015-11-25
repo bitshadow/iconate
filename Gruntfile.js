@@ -4,7 +4,9 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         bump: {
-            options: { part: 'patch' },
+            options: {
+                part: 'patch'
+            },
             files: ['package.json']
         },
         pkg: grunt.file.readJSON('package.json'),
@@ -47,8 +49,10 @@ module.exports = function(grunt) {
             options: {
                 map: false,
                 processors: [
-                  require('autoprefixer')({browsers: ["chrome 41", "chrome 4", "firefox 37", "firefox 5", "ie 10", "ie_mob 11", "opera 12", "safari 8"]}),
-                  require('csswring')()
+                    require('autoprefixer')({
+                        browsers: ["chrome 41", "chrome 4", "firefox 37", "firefox 5", "ie 10", "ie_mob 11", "opera 12", "safari 8"]
+                    }),
+                    require('csswring')()
                 ]
             },
             dist: {

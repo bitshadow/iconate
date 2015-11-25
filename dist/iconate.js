@@ -1,4 +1,4 @@
-/*! iconate.js - v0.2.4 - 2015-10-09
+/*! iconate.js - v0.2.5 - 2015-11-25
 * http://bitshadow.github.io/iconate
 * Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
 
@@ -7,8 +7,8 @@
 (function() {
     'use strict';
 
-    var DEFAULT_DURATION  = 600;
-    var ONE_SECOND        = 1000;
+    var DEFAULT_DURATION = 600;
+    var ONE_SECOND = 1000;
     var DEFAULT_ANIMATION = 'zoomOut';
     var ANIMATION_START;
     var ANIMATION_END;
@@ -57,6 +57,10 @@
     }
 
     function iconate(el, options, callback) {
+        var duration,
+            showPercent,
+            animation;
+
         if (!el) {
             throw new Error('Iconate > "element" is required');
         }
@@ -71,18 +75,16 @@
         }
 
         options = options || {};
-        var duration, showPercent, animation;
         animation = options.animation || DEFAULT_ANIMATION;
         duration = options.duration || DEFAULT_DURATION;
 
         function animationStartHandler() {
-            var currentPercent = 0,
-                averageFrames,
-                now = currentTime(),
+            var now = currentTime(),
                 halfDuration = duration / 2;
 
             showPercent = window.setTimeout(function() {
                 var elapsed = currentTime() - now;
+
                 if (elapsed >= halfDuration) {
                     changeClasses(el, options.from, options.to);
                 }

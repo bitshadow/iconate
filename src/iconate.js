@@ -3,8 +3,8 @@
 (function() {
     'use strict';
 
-    var DEFAULT_DURATION  = 600;
-    var ONE_SECOND        = 1000;
+    var DEFAULT_DURATION = 600;
+    var ONE_SECOND = 1000;
     var DEFAULT_ANIMATION = 'zoomOut';
     var ANIMATION_START;
     var ANIMATION_END;
@@ -53,6 +53,10 @@
     }
 
     function iconate(el, options, callback) {
+        var duration,
+            showPercent,
+            animation;
+
         if (!el) {
             throw new Error('Iconate > "element" is required');
         }
@@ -67,18 +71,16 @@
         }
 
         options = options || {};
-        var duration, showPercent, animation;
         animation = options.animation || DEFAULT_ANIMATION;
         duration = options.duration || DEFAULT_DURATION;
 
         function animationStartHandler() {
-            var currentPercent = 0,
-                averageFrames,
-                now = currentTime(),
+            var now = currentTime(),
                 halfDuration = duration / 2;
 
             showPercent = window.setTimeout(function() {
                 var elapsed = currentTime() - now;
+
                 if (elapsed >= halfDuration) {
                     changeClasses(el, options.from, options.to);
                 }
