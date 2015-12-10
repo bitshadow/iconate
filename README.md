@@ -18,13 +18,13 @@ Installation
 1. Include the Stylesheet and Javascript files in your html.
 
     ```html
-        <link rel="stylesheet" href="iconate.min.css">
-        <script type="text/javascript" src="iconate.min.js">
+    <link rel="stylesheet" href="iconate.min.css">
+    <script type="text/javascript" src="iconate.min.js">
     ```
 2. Create icon element.
 
     ```html
-       <i id="icon" class="fa fa-bars fa-lg"></i>
+    <i id="icon" class="fa fa-bars fa-lg"></i>
     ```
 3. Animate icon from `fa-bar` to `fa-arrow-right` with `rubberBand` animation.
 
