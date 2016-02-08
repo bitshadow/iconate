@@ -38,14 +38,15 @@
     "grunt": "~0.4.5",
     "grunt-bumpx": "^0.2.1",
     "grunt-contrib-concat": "~0.5.1",
-    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-jshint": "^0.12.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-postcss": "^0.7.1"
   },
   "dependencies": {
-    "autoprefixer": "^6.1.1",
-    "csswring": "^4.0.0"
+    "autoprefixer": "^6.3.1",
+    "csswring": "^4.2.1",
+    "grunt-contrib-uglify": "^0.11.1"
   },
   "license": "MIT"
 }
