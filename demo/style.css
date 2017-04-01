@@ -184,3 +184,42 @@ hr {
         display: none;
     }
 }
+
+#carbonads {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-bottom: none;
+    font-size: 13.5px;
+    line-height: 17.5px;
+    padding: 0.9375rem 0.9375rem 0.5rem;
+}
+
+#carbonads a {
+    text-decoration: none;
+    color: #000;
+}
+
+.carbon-img,
+.carbon-text {
+    float: left;
+}
+
+.carbon-text {
+    display: block;
+    max-width: 50%;
+    text-align: left;
+    padding-bottom: 0.5rem;
+    padding-left: 0.9375rem;
+}
+
+.carbon-poweredby {
+    display: block;
+    color: #b1b1b1;
+    float: right;
+    font-size: .8em;
+}
