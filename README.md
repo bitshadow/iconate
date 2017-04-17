@@ -1,9 +1,9 @@
-#iconate.js
+# iconate.js
 *A call to transform your existing icons in a cool trendy way*
 
 `iconate.js` is a tiny performant library for cross-browser icon transformation animations in your projects.
 
-##[Demo](http://bitshadow.github.io/iconate)
+## [Demo](http://bitshadow.github.io/iconate)
 
 Installation
 ------------
