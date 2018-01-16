@@ -1,8 +1,6 @@
-/*! iconate.js - v0.2.5 - 2015-11-25
+/*! iconate.js - v0.2.7 - 2018-01-16
 * http://bitshadow.github.io/iconate
-* Copyright (c) 2015 Jignesh Kakadiya; Licensed MIT */
-
-/*global window */
+* Copyright (c) 2018 Jignesh Kakadiya;/*global window */
 /*global document */
 (function() {
     'use strict';
