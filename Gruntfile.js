@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
                 '<%= grunt.template.today("yyyy-mm-dd") + "\\n" %>' +
                 '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-                '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;'
+                '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n\n' +
         },
         jshint: {
             files: ['Gruntfile.js', 'src/<%= pkg.name %>.js'],
