@@ -45,11 +45,24 @@
     }
 
     function changeClasses(element, from, to) {
-        if (element.classList.contains(from)) {
-            element.classList.remove(from);
+        if(Array.isArray(from) && Array.isArray(to)){
+            console.log(from,to)
+            if(from.length>0){
+                from.forEach(className => {
+                    console.log(className)
+                    element.classList.remove(className);                    
+                });
+            }
+            to.forEach(className => {                
+                element.classList.add(className);
+            });
+        }else{
+            if (element.classList.contains(from)) {
+                element.classList.remove(from);
+            }
+    
+            element.classList.add(to);
         }
-
-        element.classList.add(to);
     }
 
     function iconate(el, options, callback) {
