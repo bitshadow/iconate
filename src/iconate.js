@@ -45,11 +45,14 @@
     }
 
     function changeClasses(element, from, to) {
-        if (element.classList.contains(from)) {
-            element.classList.remove(from);
+        if(from!==null && to!==null){
+            from.split(' ').forEach(className => {
+                element.classList.remove(className);
+            });
+            to.split(' ').forEach(className => {
+                element.classList.add(className);
+            });
         }
-
-        element.classList.add(to);
     }
 
     function iconate(el, options, callback) {
