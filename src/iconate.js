@@ -45,23 +45,13 @@
     }
 
     function changeClasses(element, from, to) {
-        if(Array.isArray(from) && Array.isArray(to)){
-            console.log(from,to)
-            if(from.length>0){
-                from.forEach(className => {
-                    console.log(className)
-                    element.classList.remove(className);                    
-                });
-            }
-            to.forEach(className => {                
+        if(from!==null && to!==null){
+            from.split(' ').forEach(className => {
+                element.classList.remove(className);
+            });
+            to.split(' ').forEach(className => {
                 element.classList.add(className);
             });
-        }else{
-            if (element.classList.contains(from)) {
-                element.classList.remove(from);
-            }
-    
-            element.classList.add(to);
         }
     }
 
